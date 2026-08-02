@@ -16,7 +16,9 @@ Requires C++ 20 and CMake 3.23.
 
 ```
 git clone "https://github.com/Lecdi/nnf"
-cd nnf/build
+cd nnf
+mkdir build
+cd build
 cmake ..
 ```
 
