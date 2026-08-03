@@ -51,7 +51,7 @@ if(COMPONENT_MNIST_EXAMPLE)
     if(USE_SYSTEM_INSTALLATIONS)
         find_package(SDL2 2.28 CONFIG QUIET)
         if(SDL2_FOUND)
-            add_library(sdl2_lib ALIAS SDL2::SDL2)
+            set(SDL2_LIB "SDL2::SDL2")
         endif()
     endif()
     if(NOT SDL2_FOUND)
@@ -60,7 +60,7 @@ if(COMPONENT_MNIST_EXAMPLE)
             GIT_TAG "release-2.28.5"
         )
         FetchContent_MakeAvailable(SDL2)
-        add_library(sdl2_lib ALIAS SDL2::SDL2-static)
+        set(SDL2_LIB "SDL2::SDL2-static")
     endif()
     FetchContent_Declare(imgui
         GIT_REPOSITORY "https://github.com/ocornut/imgui.git"
@@ -76,7 +76,7 @@ if(COMPONENT_MNIST_EXAMPLE)
         "${imgui_SOURCE_DIR}/backends/imgui_impl_sdlrenderer2.cpp"
     )
     target_include_directories(imgui_sdl2 PUBLIC "${imgui_SOURCE_DIR}")
-    target_link_libraries(imgui_sdl2 PUBLIC sdl2_lib)
+    target_link_libraries(imgui_sdl2 PUBLIC "${SDL2_LIB}")
 endif()
 
 FetchContent_Declare(platformer
