@@ -1,4 +1,4 @@
-# Neural network framwork in C++
+# Neural network framework in C++
 
 This project aims to build and train neural networks and convolutional neural networks from scratch in C++ with no external maths or machine learning libraries.
 
