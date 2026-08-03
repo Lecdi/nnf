@@ -7,7 +7,7 @@
 
 constexpr bool  START_FROM_SAVED  = false;
 constexpr bool  SAVE_MODEL        = true;
-constexpr int   MAX_SAMPLES       = 60000;
+constexpr int   MAX_SAMPLES       = 5000;
 constexpr int   NUM_EPOCHS        = 1;
 constexpr int   BATCH_SIZE        = 64;
 constexpr float LEARNING_RATE     = 0.001f;
