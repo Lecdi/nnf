@@ -12,8 +12,9 @@ int main(int argc, char **argv)
     model->compile();
     model->init();
 
-    model->sgd(train_x, train_y, 150, 64, 0.001f);
-
+    model->sgd(train_x, train_y, 30, 64, 0.001f);
+    model->sgd(train_x, train_y, 30, 64, 0.0001f);
+    
     auto save_path = std::filesystem::path(OUTPUT_DIR) / OUTPUT_FILENAME;
     model->save_to(save_path);
 
